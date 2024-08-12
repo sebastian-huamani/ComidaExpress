@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/imagen_persona"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gato"/>
+        <TextView
+            android:id="@+id/titlo_persona"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gato del meme"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/imagen_persona"
+            android:layout_toEndOf="@id/imagen_persona"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/fecha_nacimiento"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/imagen_persona"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titlo_persona"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/imagen_persona"
+            android:text="200-08-08"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

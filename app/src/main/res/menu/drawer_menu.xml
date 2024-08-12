@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <item android:title="Promos y Creditos">
+     <menu>
+         <item android:id="@+id/home"
+             android:icon="@drawable/dollar_svgrepo_com"
+             android:title="Creditos">
+         </item>
+         <item android:id="@+id/personas"
+             android:icon="@drawable/card_2_svgrepo_com"
+             android:title="Cupones">
+         </item>
+
+     </menu>
+
+
+ </item>
+
+        <item android:title="Mi Cuenta">
+            <menu>
+                <item android:id="@+id/home2"
+                    android:icon="@drawable/routing_2_svgrepo_com"
+                    android:title="Direcciones">
+                </item>
+            </menu>
+
+
+        </item>
+</menu>
