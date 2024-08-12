@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
+        android:padding="10dp"
         android:gravity="center"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,10 +16,10 @@
         app:titleTextAppearance="@style/TextAppearance.AppCompat.Large">
 
         <LinearLayout
-            android:padding="10dp"
+
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="bottom|end">
 
