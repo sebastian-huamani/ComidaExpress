@@ -1,9 +1,11 @@
 package pe.edu.comidaexpress.Adaptadores;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,11 +45,17 @@ public class AdapterPersona extends RecyclerView.Adapter<AdapterPersona.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String nombre = model.get(position).getNombre();
-        String fechanacimiento = model.get(position).getFechanacimiento();
+//        String fechanacimiento = model.get(position).getFechanacimiento();
         int imagen = model.get(position).getImagenId();
         holder.nombre.setText(nombre);
-        holder.fechanacimiento.setText(fechanacimiento);
+//        holder.fechanacimiento.setText(fechanacimiento);
         holder.imagenID.setImageResource(imagen);
+        holder.btn_agregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i("btn", nombre);
+            }
+        });
     }
 
     @Override
@@ -67,11 +75,14 @@ public class AdapterPersona extends RecyclerView.Adapter<AdapterPersona.ViewHold
         TextView nombre, fechanacimiento;
         ImageView imagenID;
 
+        Button btn_agregar;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            nombre = itemView.findViewById(R.id.titlo_persona);
-            fechanacimiento = itemView.findViewById(R.id.fecha_nacimiento);
-            imagenID = itemView.findViewById(R.id.imagen_persona);
+//            nombre = itemView.findViewById(R.id.titlo_persona);
+//            fechanacimiento = itemView.findViewById(R.id.fecha_nacimiento);
+//            imagenID = itemView.findViewById(R.id.imagen_persona);
+            btn_agregar = itemView.findViewById(R.id.btn_agregar);
         }
     }
 }

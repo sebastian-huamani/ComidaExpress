@@ -52,6 +52,8 @@ public class PersonasFragment extends Fragment {
                 Toast.makeText(getContext(), "Selecciondo: " + nombre, Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 
     private void cargarLista() {

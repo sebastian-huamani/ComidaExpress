@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:padding="10dp"
-        android:gravity="center"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:background="#FFFFFF"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:titleTextAppearance="@style/TextAppearance.AppCompat.Large">
+        android:gravity="center">
 
         <LinearLayout
-
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="bottom|end">
+            android:layout_marginTop="10dp"
+            android:gravity="center|end"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="260dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="170dp"
+                    android:layout_height="90dp"
+                    android:backgroundTint="@color/white"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo_header_white"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
 
             <ImageButton
                 android:layout_width="88dp"
-                android:layout_height="45dp"
+                android:layout_height="42dp"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
                 android:src="@drawable/carrito_de_compras" />
