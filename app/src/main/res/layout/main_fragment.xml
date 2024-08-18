@@ -6,8 +6,9 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:paddingHorizontal="20dp"
         android:id="@+id/recycleViewProductos"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

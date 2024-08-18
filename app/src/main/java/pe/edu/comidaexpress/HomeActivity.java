@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
 
+import pe.edu.comidaexpress.Fragments.CarritoFragment;
 import pe.edu.comidaexpress.Fragments.MainFragment;
 import pe.edu.comidaexpress.Fragments.PersonasFragment;
 
@@ -63,19 +64,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         drawerLayout.closeDrawer(GravityCompat.START);
 
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+
         if(menuItem.getItemId() == R.id.home){
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container, new MainFragment());
-            fragmentTransaction.commit();
         }
 
         if(menuItem.getItemId() == R.id.personas){
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.container, new PersonasFragment());
-            fragmentTransaction.commit();
         }
+
+        if(menuItem.getItemId() == R.id.carrito){
+            fragmentTransaction.replace(R.id.container, new CarritoFragment());
+        }
+
+        fragmentTransaction.commit();
 
         return false;
     }
