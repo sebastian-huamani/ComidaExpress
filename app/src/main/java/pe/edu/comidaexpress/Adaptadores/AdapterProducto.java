@@ -1,23 +1,37 @@
 package pe.edu.comidaexpress.Adaptadores;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import pe.edu.comidaexpress.Entidades.Producto;
 import pe.edu.comidaexpress.R;
 
 public class AdapterProducto extends RecyclerView.Adapter<AdapterProducto.ViewHolder> implements View.OnClickListener  {
-
+    private static final String urlservidor = "http://192.168.1.44//comidaExpress/agregarCarrito.php";
+    RequestQueue requestQueue;
     LayoutInflater layoutInflater;
     ArrayList<Producto> lista;
 
@@ -48,12 +62,45 @@ public class AdapterProducto extends RecyclerView.Adapter<AdapterProducto.ViewHo
         String codigo = lista.get(position).getCodigo();
         String nombre = lista.get(position).getNombre();
         Double precio = lista.get(position).getPrecio();
-        int image = lista.get(position).getImageId();
+        int image = lista.get(position).getImageId();http://192.168.1.44/
 
         holder.nombre.setText(nombre);
         holder.codigo.setText(codigo);
         holder.precio.setText(String.valueOf(precio));
-        holder.imagenId.setImageResource(image);
+        holder.btn_agregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Log.i("data", codigo);
+                RequestQueue requestQueue = Volley.newRequestQueue(v.getContext());
+                StringRequest stringRequest = new StringRequest(
+                        Request.Method.POST,
+                        urlservidor,
+                        response -> {
+                            Log.i("data", "aaaaa");
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError volleyError) {
+                                Log.i("error", String.valueOf(volleyError));
+                            }
+                        }
+                ){
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
+                        params.put("codigo", codigo);
+                        return params;
+                    }
+                };
+
+                requestQueue.add(stringRequest);
+
+            }
+        });
+//        holder.imagenId.setImageResource(image);
     }
 
     @Override

@@ -45,7 +45,7 @@ public class AdapterCarrito extends RecyclerView.Adapter<AdapterCarrito.ViewHold
 
         holder.nombre.setText(nombre);
         holder.precio.setText(String.valueOf(precio));
-        holder.image.setImageResource(image);
+//        holder.image.setImageResource(image);
     }
 
     @Override

@@ -21,9 +21,16 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleViewCarrito"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="414dp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/btn_comprar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finalizar Compra"
+        />
 
     </LinearLayout>
 
